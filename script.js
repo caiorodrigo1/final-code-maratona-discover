@@ -99,9 +99,9 @@ const DOM = {
 
 const Utils = {
     formatAmount(value){
-        value = Number(value) * 100
+        value = (value) * 100
         
-        return value;
+        return Math.round(value);
     },
 
     formatDate(date){
@@ -111,7 +111,7 @@ const Utils = {
 
     formatCurrency(value){
         const signal = Number(value) < 0 ? "-" : ""
-
+        //Transforma os numeros em string e remove tudo que n for numero por ""
         value = String(value).replace(/\D/g, "")
 
         value = Number(value) / 100
@@ -187,8 +187,6 @@ const Form ={
     }
 
 }
-
-
 
 const App = {
     init(){
